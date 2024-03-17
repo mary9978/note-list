@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  background-color: #e1e1e1;
+}
+@font-face {
+  font-family: Nunito;
+  src: url(/public/fonts/nunito/Nunito-Medium.ttf);
+}
+@font-face {
+  font-family: NunitoBold;
+  src: url(/public/fonts/nunito/Nunito-ExtraBold.ttf);
+}
+.title{
+  text-align: center;
+  font-size: 2rem;
+  font-family: NunitoBold;
+}
+/* note style */
+.card{
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  font-family: Nunito , sans-serif;
+}
+.note-desc{
+  font-size: 16px;
+}
+.completed{
+  text-decoration: line-through;
+}
+.note-date{
+  font-size: 17px;
+  color: gray;
+  font-family: NunitoBold , sans-serif;
+}
+.note-title{
+  font-size: 20px;
+  font-family: NunitoBold , sans-serif;
+}
+.edit-note{
+  cursor: pointer;
+  transition: all ease-in-out 0.5ms;
+}
+.edit-btn{
+  border: none;
+  background-color: transparent !important;
+  transition: all ease-in 0.5ms;
+}
+.input-complete__note{
+  border-radius: 20px;
+}
+
