@@ -7,7 +7,6 @@ import TextField from "./TextField";
 function MyModal({ show, onHide }) {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
-  const [color, setColor] = useState("#FFFFFF");
   const dispatch = useNoteDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +18,6 @@ function MyModal({ show, onHide }) {
           title,
           desc,
           isCompleted: false,
-          color: color,
           category: "",
           date: new Date().toISOString("en-us"),
         },
@@ -54,9 +52,7 @@ function MyModal({ show, onHide }) {
             <p className="text-gray-100 text-sm my-2">
               with note plan your day easily and stay focused
             </p>
-            <form
-             onSubmit={handleSubmit}
-             className="flex flex-col w-1/2 my-6">
+            <form onSubmit={handleSubmit} className="flex flex-col w-1/2 my-6">
               <TextField
                 type={"text"}
                 text={"enter your task"}
@@ -69,7 +65,9 @@ function MyModal({ show, onHide }) {
                 value={desc}
                 handleChange={(input) => setDesc(input)}
               />
-              <button className="bg-red-500 my-2 p-2 rounded-md text-white font-bold">Submit</button>
+              <button className="bg-red-500 my-2 p-2 rounded-md text-white font-bold">
+                Submit
+              </button>
             </form>
           </div>
         </div>

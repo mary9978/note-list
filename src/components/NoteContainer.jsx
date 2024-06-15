@@ -1,6 +1,5 @@
 import React from 'react'
 import Note from './Note'
-import { useNote } from '../context/NoteContext'
 function NoteContainer({sortedNotes}) {
     
   return (

@@ -25,7 +25,6 @@ function Note({ note }) {
   };
   return (
     <div key={note.id} className={`flex flex-col rounded-lg p-4 bg-gray-400 `}>
-      {/* <div className=""> */}
       <span className="note-date">
         {new Date(note.date).toLocaleDateString("en-US", {
           day: "numeric",
@@ -95,7 +94,6 @@ function Note({ note }) {
           <p class="card-text note-desc">{note.desc}</p>
         </>
       )}
-      {/* </div> */}
     </div>
   );
 }
