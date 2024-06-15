@@ -1,5 +1,4 @@
 import React from "react";
-import "./notestatus.css";
 import { useNote, useNoteDispatch } from "../context/NoteContext";
 function NoteStatus({ onTabClick }) {
   const note = useNote();

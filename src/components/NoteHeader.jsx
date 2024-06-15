@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNote } from "../context/NoteContext";
 import { CiSearch } from "react-icons/ci";
 import { MdAdd } from "react-icons/md";
-import FilteredNotes from "../components/FilteredNotes";
 import MyModal from "./MyModal";
 function NoteHeader({ children }) {
   const [showModal, setShowModal] = useState(false);
