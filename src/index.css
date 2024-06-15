@@ -1,9 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
   scroll-behavior: smooth;
-  background-color: #e1e1e1;
+  background-color: #2E274F;
 }
 @font-face {
   font-family: Nunito;
