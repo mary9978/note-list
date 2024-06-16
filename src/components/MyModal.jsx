@@ -4,7 +4,9 @@ import toast from "react-hot-toast";
 import { IoMdClose } from "react-icons/io";
 import { useNoteDispatch } from "../context/NoteContext";
 import TextField from "./TextField";
+import { useOutSideClick } from "../hooks/useOutSideClick";
 function MyModal({ show, onHide }) {
+  const modalRef = useOutSideClick(onHide)
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const dispatch = useNoteDispatch();
@@ -34,10 +36,12 @@ function MyModal({ show, onHide }) {
     <>
       {show && (
         <div
+          
           className="backdrop-blur-sm fixed left-0 top-0 z-50
       w-full h-screen bg-secondary bg-opacity-30"
         >
           <div
+            ref={modalRef}
             className="fixed left-1/2 top-1/2 px-5  -translate-x-1/2 -translate-y-1/2
          rounded-lg bg-primary shadow-lg transition-all duration-500 ease-out
          w-[calc(100vw-2rem)] md:max-w-md max-h-[calc(100vh-2rem)] overflow-y-auto p-2"

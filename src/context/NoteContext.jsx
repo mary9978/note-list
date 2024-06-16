@@ -31,7 +31,6 @@ const initialNote = [
           ...state ,payload
         ]
       }
-
       case 'DELETE_NOTE':{
          return state.filter(item => item.id !== payload); 
       }

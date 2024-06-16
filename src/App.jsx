@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useState,useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import NoteStatus from "./components/NoteStatus";
 import { useNote } from "./context/NoteContext";
@@ -6,35 +6,14 @@ import NoteHeader from "./components/NoteHeader";
 import NoteContainer from "./components/NoteContainer";
 
 function App() {
-  const note = useNote();
-  const [sortedNotes, setSortNotes] = useState(note);
-  const handleTab = (sortedOption) => {
-    switch (sortedOption) {
-      case "All": {
-        setSortNotes(note);
-        break;
-      }
-      case "Completed": {
-        setSortNotes(sortedNotes.filter((note) => note.isCompleted));
-        break;
-      }
-      case "UnCompleted": {
-        setSortNotes(sortedNotes.filter((note) => !note.isCompleted));
-        break;
-      }
-      default: {
-        setSortNotes(note);
-        break;
-      }
-    }
-  };
+  const [sortBy, setSortBy] = useState("latest");
   return (
     <>
       <Toaster />
-      <div className="container max-w-screen-md mx-auto h-screen">
+      <div className="container max-w-screen-md mx-auto h-screen px-4 md:px-10 lg:px-0">
         <NoteHeader />
-        <NoteStatus onTabClick={handleTab} />
-        <NoteContainer sortedNotes={note} />
+        <NoteStatus sortBy={sortBy} onSort={(e)=> setSortBy(e.target.value)}/>
+        <NoteContainer sortBy={sortBy} />
       </div>
     </>
   );

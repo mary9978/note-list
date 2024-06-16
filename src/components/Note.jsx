@@ -91,7 +91,7 @@ function Note({ note }) {
             </div>
           </div>
 
-          <p class="card-text note-desc">{note.desc}</p>
+          <p className="card-text note-desc">{note.desc}</p>
         </>
       )}
     </div>
