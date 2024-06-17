@@ -3,19 +3,16 @@ import { useNote, useNoteDispatch } from "../context/NoteContext";
 import { CiSearch } from "react-icons/ci";
 import { MdAdd } from "react-icons/md";
 import MyModal from "./MyModal";
-function NoteHeader({sortBy,onSort}) {
+function NoteHeader({onSearch,searchValue}) {
   const [showModal, setShowModal] = useState(false);
-  const [searchValue,setSearch] = useState('');
+ 
   const dispatch = useNoteDispatch();
   return (
     <nav className="flex justify-between items-center h-20 ">
       <div className="flex items-center gap-x-1 bg-secondary p-2 rounded-lg">
         <CiSearch className="text-gray-200 w-4 h-4" />
         <input
-          onChange={(e)=> {
-            setSearch(e.target.value);
-            dispatch({type:"SERACH_NOTE",payload:searchValue})
-          }}
+          onChange={onSearch}
           value={searchValue}
           className="bg-transparent text-gray-200"
           type="text"
